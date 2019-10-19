@@ -1,6 +1,7 @@
 ﻿using System;
+using DesignPatterns.Builder;
+using DesignPatterns.Builder.Interface;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace DesignPatterns
 {
@@ -9,12 +10,10 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
             var serviceProvider = new ServiceCollection().Configure();
+            var burritoDirector = serviceProvider.GetService<IBurritoDirector>();
 
-            var logger = serviceProvider
-                .GetService<ILoggerFactory>()
-                .CreateLogger<Program>();
-            
-            logger.LogInformation("Show log");
+            burritoDirector.BuildBurritoWithMeat(3, "Chicken", BurritoBuilderTypes.BurritoBuilder);
+            burritoDirector.BuildVegeBurrito(1);
 
             Console.ReadKey();
         }
