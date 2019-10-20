@@ -1,5 +1,6 @@
 ﻿using System;
 using DesignPatterns.Builder;
+using DesignPatterns.Factory;
 using DesignPatterns.Factory.AbstractFactory;
 using DesignPatterns.Factory.FactoryMethod;
 using Microsoft.Extensions.DependencyInjection;

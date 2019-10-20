@@ -1,6 +1,7 @@
 ﻿using System;
 using DesignPatterns.Builder;
 using DesignPatterns.Builder.Interface;
+using DesignPatterns.Factory;
 using DesignPatterns.Factory.AbstractFactory;
 using DesignPatterns.Factory.FactoryMethod;
 using DesignPatterns.Factory.FactoryMethod.Implementation;
@@ -19,13 +20,13 @@ namespace DesignPatterns
             burritoDirector.BuildVegeBurrito(1);
 
             var studentFactory = new StudentFactory();
-            var polishStudent = studentFactory.Create(ShoolMemberType.PolishStudent);
-            var englishStudent = studentFactory.Create(ShoolMemberType.EnglishStudent);
+            var polishStudent = studentFactory.Create(SchoolMemberType.PolishStudent);
+            var englishStudent = studentFactory.Create(SchoolMemberType.EnglishStudent);
 
             polishStudent.Greetings();
             englishStudent.Greetings();
 
-            var schoolMemberFactory = AbstractFactoryDependencyInjectionConfigurator.GetSchoolMemberFactory(ShoolMemberType.PolishStudent, serviceProvider);
+            var schoolMemberFactory = SchoolMemberFactoryExtension.GetSchoolMemberFactory(SchoolMemberType.PolishStudent, serviceProvider);
             var abstractFactoryStudent = schoolMemberFactory.CreateStudent();
 
             abstractFactoryStudent.Greetings();

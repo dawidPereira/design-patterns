@@ -14,30 +14,14 @@ namespace DesignPatterns.Factory.AbstractFactory
             return serviceCollection
                 .AddTransient<EnglishSchoolMemberFactory>()
                 .AddTransient<PolishSchoolMemberFactory>()
-                .ConfigureShoolMemberFactory();
+                .ConfigureSchoolMemberFactory();
         }
 
-        public static Func<ShoolMemberType, IServiceProvider, ISchoolMemberFactory> GetSchoolMemberFactory = 
-            delegate (ShoolMemberType schoolMemberType, IServiceProvider serviceProvider)
-                {
-                    switch (schoolMemberType)
-                    {
-                        case ShoolMemberType.PolishStudent:
-                                return serviceProvider.GetService<PolishSchoolMemberFactory>();
-
-                        case ShoolMemberType.EnglishStudent:
-                                return serviceProvider.GetService<EnglishSchoolMemberFactory>();
-
-                        default:
-                                return serviceProvider.GetService<PolishSchoolMemberFactory>();
-                    }
-                };
-
-        private static IServiceCollection ConfigureShoolMemberFactory(this IServiceCollection serviceCollection)
+        private static IServiceCollection ConfigureSchoolMemberFactory(this IServiceCollection serviceCollection)
         {
             return serviceCollection
-                .AddTransient<Func<ShoolMemberType, ISchoolMemberFactory>>(serviceProvider => key 
-                    => GetSchoolMemberFactory(key, serviceProvider));
+                .AddTransient<Func<SchoolMemberType, ISchoolMemberFactory>>(serviceProvider => key =>
+                    SchoolMemberFactoryExtension.GetSchoolMemberFactory(key, serviceProvider));
         }
     }
 }
