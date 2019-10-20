@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.FactoryMethod
 {
-    public enum StudentType
+    public enum ShoolMemberType
     {
         PolishStudent,
         EnglishStudent

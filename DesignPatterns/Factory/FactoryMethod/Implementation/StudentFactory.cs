@@ -4,16 +4,16 @@ namespace DesignPatterns.FactoryMethod.Implementation
 {
     public class StudentFactory : IStudentFactory
     {
-        public Student Create(StudentType studentType)
+        public Student Create(ShoolMemberType studentType)
         {
             Student student = null;
             switch (studentType)
             {
-                case StudentType.PolishStudent:
+                case ShoolMemberType.PolishStudent:
                     student = PolishStudent.Create();
                     break;
 
-                case StudentType.EnglishStudent:
+                case ShoolMemberType.EnglishStudent:
                     student = EnglishStudent.Create();
                     break;
             }

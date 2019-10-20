@@ -1,5 +1,6 @@
 ﻿using System;
 using DesignPatterns.Builder;
+using DesignPatterns.Factory;
 using DesignPatterns.FactoryMethod;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,6 +13,7 @@ namespace DesignPatterns
             return serviceCollection
                 .AddBuilder()
                 .AddFactoryMethod()
+                .AddAbstractFactory()
                 .BuildServiceProvider();
         }
     }

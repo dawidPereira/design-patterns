@@ -2,6 +2,6 @@
 {
     public interface IStudentFactory
     {
-        Student Create(StudentType studentType);
+        Student Create(ShoolMemberType studentType);
     }
 }

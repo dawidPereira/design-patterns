@@ -2,21 +2,21 @@
 
 namespace DesignPatterns.FactoryMethod
 {
-    public class PolishStudent : Student
+    public class EnglishStudent : Student
     {
-        private PolishStudent()
+        private EnglishStudent()
         {
 
         }
 
         public override void Greetings()
         {
-            Console.WriteLine("Dzień dobry");
+            Console.WriteLine("Hello, I'm student form England.");
         }
 
         public static Student Create()
         {
-            var student = new PolishStudent();
+            var student = new EnglishStudent();
             // Do some specific actions
             return student;
         }
