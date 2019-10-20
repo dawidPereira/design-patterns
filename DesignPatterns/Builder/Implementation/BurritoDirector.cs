@@ -5,14 +5,14 @@ namespace DesignPatterns.Builder.Implementation
 {
     public class BurritoDirector : IBurritoDirector
     {
-        private readonly  Func<string, IBurritoBuilder> _builder;
+        private readonly  Func<BurritoBuilderTypes, IBurritoBuilder> _builder;
 
-        public BurritoDirector(Func<string, IBurritoBuilder> builder)
+        public BurritoDirector(Func<BurritoBuilderTypes, IBurritoBuilder> builder)
         {
             _builder = builder;
         }
 
-        public Burrito BuildVegeBurrito(int spiciness, string builderType)
+        public Burrito BuildVegeBurrito(int spiciness, BurritoBuilderTypes builderType)
         {
             return _builder(builderType)
                 .WithCheese()
@@ -20,9 +20,9 @@ namespace DesignPatterns.Builder.Implementation
                 .Build(spiciness);
         }
 
-        public Burrito BuildBurritoWithMeat(int spiciness, string meat, string builderType)
+        public Burrito BuildBurritoWithMeat(int spiciness, string meat, BurritoBuilderTypes builderType)
         {
-            return _builder("test")
+            return _builder(builderType)
                 .WithCheese()
                 .WithNachos()
                 .WithMeat(meat)

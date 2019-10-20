@@ -2,8 +2,8 @@
 {
     public interface IBurritoDirector
     {
-        Burrito BuildVegeBurrito(int spiciness, string builderType = BurritoBuilderTypes.DefaultBuilder);
+        Burrito BuildVegeBurrito(int spiciness, BurritoBuilderTypes builderType = BurritoBuilderTypes.DefaultBuilder);
 
-        Burrito BuildBurritoWithMeat(int spiciness, string meat, string builderType = BurritoBuilderTypes.DefaultBuilder);
+        Burrito BuildBurritoWithMeat(int spiciness, string meat, BurritoBuilderTypes builderType = BurritoBuilderTypes.DefaultBuilder);
     }
 }

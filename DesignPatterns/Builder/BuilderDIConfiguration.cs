@@ -18,7 +18,7 @@ namespace DesignPatterns.Builder
         {
             return serviceCollection
                 .AddTransient<BurritoBuilder>()
-                .AddTransient<Func<string, IBurritoBuilder>>(serviceProvider => key =>
+                .AddTransient<Func<BurritoBuilderTypes, IBurritoBuilder>>(serviceProvider => key =>
                 {
                     switch (key)
                     {
