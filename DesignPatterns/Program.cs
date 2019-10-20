@@ -1,6 +1,7 @@
 ﻿using System;
 using DesignPatterns.Builder;
 using DesignPatterns.Builder.Interface;
+using DesignPatterns.FactoryMethod;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns
@@ -14,6 +15,13 @@ namespace DesignPatterns
 
             burritoDirector.BuildBurritoWithMeat(3, "Chicken", BurritoBuilderTypes.BurritoBuilder);
             burritoDirector.BuildVegeBurrito(1);
+
+            var polishStudent = PolishStudent.Create();
+            var englishStudent = EnglishStudent.Create();
+
+            polishStudent.Greetings();
+            englishStudent.Greetings();
+
 
             Console.ReadKey();
         }

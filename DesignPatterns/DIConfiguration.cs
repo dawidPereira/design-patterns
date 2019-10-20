@@ -1,7 +1,6 @@
 ﻿using System;
 using DesignPatterns.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace DesignPatterns
 {
