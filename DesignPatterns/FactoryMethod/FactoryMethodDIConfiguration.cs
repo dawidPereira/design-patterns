@@ -9,7 +9,7 @@ namespace DesignPatterns.FactoryMethod
         public static IServiceCollection AddFactoryMethod(this IServiceCollection serviceCollection)
         {
             return serviceCollection
-                .AddTransient<IStudentFactory, StudentFactory>()
+                .AddTransient<IStudentFactory, StudentFactory>();
         }
     }
 }
