@@ -4,16 +4,16 @@ using DesignPatterns.FactoryMethod;
 
 namespace DesignPatterns.Factory.AbstractFactory.Implementation
 {
-    public class PolishShoolMemberFactory : IShoolMemberFactory
+    public class EnglishSchoolMemberFactory : ISchoolMemberFactory
     {
         public Student CreateStudent()
         {
-            return PolishStudent.Create();
+            return EnglishStudent.Create();
         }
 
         public Teacher CreateTeacher()
         {
-            return PolishTeacher.Create();
+            return EnglishTeacher.Create();
         }
     }
 }

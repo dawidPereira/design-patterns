@@ -3,7 +3,7 @@ using DesignPatterns.FactoryMethod;
 
 namespace DesignPatterns.Factory.AbstractFactory.Interface
 {
-    public interface IShoolMemberFactory
+    public interface ISchoolMemberFactory
     {
         Student CreateStudent();
         Teacher CreateTeacher();

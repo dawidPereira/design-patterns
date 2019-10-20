@@ -23,13 +23,10 @@ namespace DesignPatterns.Builder
                     switch (key)
                     {
                         case BurritoBuilderTypes.BurritoBuilder:
-                        {
                             return serviceProvider.GetService<BurritoBuilder>();
-                        }
+
                         default:
-                        {
                             return serviceProvider.GetService<BurritoBuilder>();
-                        }
                     }
                 });
         }

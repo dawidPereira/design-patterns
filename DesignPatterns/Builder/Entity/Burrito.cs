@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Builder
+﻿namespace DesignPatterns.Builder.Entity
 {
     public class Burrito
     {

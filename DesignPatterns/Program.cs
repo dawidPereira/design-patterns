@@ -1,9 +1,9 @@
 ﻿using System;
 using DesignPatterns.Builder;
 using DesignPatterns.Builder.Interface;
-using DesignPatterns.Factory;
-using DesignPatterns.FactoryMethod;
-using DesignPatterns.FactoryMethod.Implementation;
+using DesignPatterns.Factory.AbstractFactory;
+using DesignPatterns.Factory.FactoryMethod;
+using DesignPatterns.Factory.FactoryMethod.Implementation;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns
@@ -25,8 +25,8 @@ namespace DesignPatterns
             polishStudent.Greetings();
             englishStudent.Greetings();
 
-            var shoolMemberFactory = AbstractFactoryDIConfiguration.getShoolMemberFactory(ShoolMemberType.PolishStudent, serviceProvider);
-            var abstractFactoryStudent = shoolMemberFactory.CreateStudent();
+            var schoolMemberFactory = AbstractFactoryDIConfiguration.GetSchoolMemberFactory(ShoolMemberType.PolishStudent, serviceProvider);
+            var abstractFactoryStudent = schoolMemberFactory.CreateStudent();
 
             abstractFactoryStudent.Greetings();
 

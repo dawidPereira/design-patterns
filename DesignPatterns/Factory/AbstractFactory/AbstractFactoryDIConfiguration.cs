@@ -1,48 +1,43 @@
-﻿using DesignPatterns.Factory.AbstractFactory.Implementation;
+﻿using System;
+using DesignPatterns.Factory.AbstractFactory.Implementation;
 using DesignPatterns.Factory.AbstractFactory.Interface;
+using DesignPatterns.Factory.FactoryMethod;
 using DesignPatterns.FactoryMethod;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
-namespace DesignPatterns.Factory
+namespace DesignPatterns.Factory.AbstractFactory
 {
     public static class AbstractFactoryDIConfiguration
     {
         public static IServiceCollection AddAbstractFactory(this IServiceCollection serviceCollection)
         {
             return serviceCollection
-                .AddTransient<EnglishShoolMemberFactory>()
-                .AddTransient<PolishShoolMemberFactory>()
+                .AddTransient<EnglishSchoolMemberFactory>()
+                .AddTransient<PolishSchoolMemberFactory>()
                 .ConfigureShoolMemberFactory();
         }
 
-        public static Func<ShoolMemberType, IServiceProvider, IShoolMemberFactory> getShoolMemberFactory = 
-            delegate (ShoolMemberType shoolMemberType, IServiceProvider serviceProvider)
+        public static Func<ShoolMemberType, IServiceProvider, ISchoolMemberFactory> GetSchoolMemberFactory = 
+            delegate (ShoolMemberType schoolMemberType, IServiceProvider serviceProvider)
                 {
-                    switch (shoolMemberType)
+                    switch (schoolMemberType)
                     {
                         case ShoolMemberType.PolishStudent:
-                            {
-                                return serviceProvider.GetService<PolishShoolMemberFactory>();
-                            }
+                                return serviceProvider.GetService<PolishSchoolMemberFactory>();
+
                         case ShoolMemberType.EnglishStudent:
-                            {
-                                return serviceProvider.GetService<EnglishShoolMemberFactory>();
-                            }
+                                return serviceProvider.GetService<EnglishSchoolMemberFactory>();
+
                         default:
-                            {
-                                return serviceProvider.GetService<PolishShoolMemberFactory>();
-                            }
+                                return serviceProvider.GetService<PolishSchoolMemberFactory>();
                     }
                 };
 
         private static IServiceCollection ConfigureShoolMemberFactory(this IServiceCollection serviceCollection)
         {
             return serviceCollection
-                .AddTransient<Func<ShoolMemberType, IShoolMemberFactory>>(serviceProvider => key =>
-                {
-                    return getShoolMemberFactory(key, serviceProvider);
-                });
+                .AddTransient<Func<ShoolMemberType, ISchoolMemberFactory>>(serviceProvider => key 
+                    => GetSchoolMemberFactory(key, serviceProvider));
         }
     }
 }

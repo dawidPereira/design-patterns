@@ -1,8 +1,8 @@
-﻿using DesignPatterns.FactoryMethod.Implementation;
-using DesignPatterns.FactoryMethod.Interface;
+﻿using DesignPatterns.Factory.FactoryMethod.Implementation;
+using DesignPatterns.Factory.FactoryMethod.Interface;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DesignPatterns.FactoryMethod
+namespace DesignPatterns.Factory.FactoryMethod
 {
     public static class FactoryMethodDIConfiguration
     {

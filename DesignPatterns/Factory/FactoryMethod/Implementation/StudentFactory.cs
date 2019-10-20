@@ -1,6 +1,7 @@
-﻿using DesignPatterns.FactoryMethod.Interface;
+﻿using DesignPatterns.Factory.FactoryMethod.Interface;
+using DesignPatterns.FactoryMethod;
 
-namespace DesignPatterns.FactoryMethod.Implementation
+namespace DesignPatterns.Factory.FactoryMethod.Implementation
 {
     public class StudentFactory : IStudentFactory
     {

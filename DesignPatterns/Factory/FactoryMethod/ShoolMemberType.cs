@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.FactoryMethod
+﻿namespace DesignPatterns.Factory.FactoryMethod
 {
     public enum ShoolMemberType
     {

@@ -1,11 +1,12 @@
 ﻿using System;
+using DesignPatterns.Builder.Entity;
 using DesignPatterns.Builder.Interface;
 
 namespace DesignPatterns.Builder.Implementation
 {
     public class BurritoBuilder : IBurritoBuilder
     {
-        private Burrito _burrito = new Burrito();
+        private readonly Burrito _burrito = new Burrito();
 
         public IBurritoBuilder WithCheese()
         {
