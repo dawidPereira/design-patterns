@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns
 {
-    public static class DIConfiguration
+    public static class DependencyInjectionConfigurator
     {
         public static IServiceProvider Configure(this IServiceCollection serviceCollection)
         {

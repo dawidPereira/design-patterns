@@ -15,17 +15,17 @@ namespace DesignPatterns.Builder.Implementation
             return this;
         }
 
-        public IBurritoBuilder WithMeat(string meet)
+        public IBurritoBuilder WithMeat(string meat)
         {
-            _burrito.Meat = meet;
-            Console.WriteLine($"{meet} was added.");
+            _burrito.Meat = meat;
+            Console.WriteLine($"{meat} was added.");
             return this;
         }
 
         public IBurritoBuilder WithNachos()
         {
             _burrito.Nachos = true;
-            Console.WriteLine($"Nachos was added.");
+            Console.WriteLine("Nachos was added.");
             return this;
         }
 

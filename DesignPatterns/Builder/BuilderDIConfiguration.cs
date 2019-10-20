@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns.Builder
 {
-    public static class BuilderDIConfiguration
+    public static class BuilderDependencyInjectionConfigurator
     {
         public static IServiceCollection AddBuilder(this IServiceCollection serviceCollection)
         {

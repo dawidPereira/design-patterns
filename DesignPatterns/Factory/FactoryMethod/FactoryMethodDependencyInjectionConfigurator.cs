@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns.Factory.FactoryMethod
 {
-    public static class FactoryMethodDIConfiguration
+    public static class FactoryMethodDependencyInjectionConfigurator
     {
         public static IServiceCollection AddFactoryMethod(this IServiceCollection serviceCollection)
         {

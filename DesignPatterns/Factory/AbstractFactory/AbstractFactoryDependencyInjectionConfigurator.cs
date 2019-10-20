@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns.Factory.AbstractFactory
 {
-    public static class AbstractFactoryDIConfiguration
+    public static class AbstractFactoryDependencyInjectionConfigurator
     {
         public static IServiceCollection AddAbstractFactory(this IServiceCollection serviceCollection)
         {

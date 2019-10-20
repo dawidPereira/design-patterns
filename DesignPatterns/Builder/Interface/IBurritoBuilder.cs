@@ -6,7 +6,7 @@ namespace DesignPatterns.Builder.Interface
     {
         IBurritoBuilder WithCheese();
 
-        IBurritoBuilder WithMeat(string meet);
+        IBurritoBuilder WithMeat(string meat);
 
         IBurritoBuilder WithNachos();
 

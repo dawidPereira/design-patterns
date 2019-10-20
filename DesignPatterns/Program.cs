@@ -25,7 +25,7 @@ namespace DesignPatterns
             polishStudent.Greetings();
             englishStudent.Greetings();
 
-            var schoolMemberFactory = AbstractFactoryDIConfiguration.GetSchoolMemberFactory(ShoolMemberType.PolishStudent, serviceProvider);
+            var schoolMemberFactory = AbstractFactoryDependencyInjectionConfigurator.GetSchoolMemberFactory(ShoolMemberType.PolishStudent, serviceProvider);
             var abstractFactoryStudent = schoolMemberFactory.CreateStudent();
 
             abstractFactoryStudent.Greetings();
