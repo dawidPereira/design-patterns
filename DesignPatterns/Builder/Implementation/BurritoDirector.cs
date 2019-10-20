@@ -1,14 +1,15 @@
 ﻿using System;
 using DesignPatterns.Builder.Entity;
 using DesignPatterns.Builder.Interface;
+using BurritoBuilderResolver = DesignPatterns.Builder.BuilderDependencyInjectionConfigurator.BurritoBuilderResolver;
 
 namespace DesignPatterns.Builder.Implementation
 {
     public class BurritoDirector : IBurritoDirector
     {
-        private readonly  Func<BurritoBuilderTypes, IBurritoBuilder> _builder;
+        private readonly  BurritoBuilderResolver _builder;
 
-        public BurritoDirector(Func<BurritoBuilderTypes, IBurritoBuilder> builder)
+        public BurritoDirector(BurritoBuilderResolver builder)
         {
             _builder = builder;
         }

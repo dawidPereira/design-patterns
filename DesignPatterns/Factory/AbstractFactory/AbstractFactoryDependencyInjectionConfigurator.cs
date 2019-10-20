@@ -1,14 +1,13 @@
-﻿using System;
-using DesignPatterns.Factory.AbstractFactory.Implementation;
+﻿using DesignPatterns.Factory.AbstractFactory.Implementation;
 using DesignPatterns.Factory.AbstractFactory.Interface;
-using DesignPatterns.Factory.FactoryMethod;
-using DesignPatterns.FactoryMethod;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns.Factory.AbstractFactory
 {
     public static class AbstractFactoryDependencyInjectionConfigurator
     {
+        public delegate ISchoolMemberFactory SchoolMemberFactoryResolver(SchoolMemberType key);
+
         public static IServiceCollection AddAbstractFactory(this IServiceCollection serviceCollection)
         {
             return serviceCollection
@@ -20,7 +19,7 @@ namespace DesignPatterns.Factory.AbstractFactory
         private static IServiceCollection ConfigureSchoolMemberFactory(this IServiceCollection serviceCollection)
         {
             return serviceCollection
-                .AddTransient<Func<SchoolMemberType, ISchoolMemberFactory>>(serviceProvider => key =>
+                .AddTransient<SchoolMemberFactoryResolver>(serviceProvider => key =>
                     SchoolMemberFactoryExtension.GetSchoolMemberFactory(key, serviceProvider));
         }
     }

@@ -3,7 +3,6 @@ using DesignPatterns.Builder;
 using DesignPatterns.Builder.Interface;
 using DesignPatterns.Factory;
 using DesignPatterns.Factory.AbstractFactory;
-using DesignPatterns.Factory.FactoryMethod;
 using DesignPatterns.Factory.FactoryMethod.Implementation;
 using Microsoft.Extensions.DependencyInjection;
 

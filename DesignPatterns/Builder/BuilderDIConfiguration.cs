@@ -7,6 +7,8 @@ namespace DesignPatterns.Builder
 {
     public static class BuilderDependencyInjectionConfigurator
     {
+        public delegate IBurritoBuilder BurritoBuilderResolver(BurritoBuilderTypes key);
+
         public static IServiceCollection AddBuilder(this IServiceCollection serviceCollection)
         {
             return serviceCollection
@@ -18,7 +20,7 @@ namespace DesignPatterns.Builder
         {
             return serviceCollection
                 .AddTransient<BurritoBuilder>()
-                .AddTransient<Func<BurritoBuilderTypes, IBurritoBuilder>>(serviceProvider => key =>
+                .AddTransient<BurritoBuilderResolver>(serviceProvider => key =>
                 {
                     switch (key)
                     {
