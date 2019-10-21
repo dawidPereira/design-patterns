@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.Factory
 {
-    public enum SchoolMemberType
+    public enum SchoolMemberLanguage
     {
         PolishStudent,
         EnglishStudent

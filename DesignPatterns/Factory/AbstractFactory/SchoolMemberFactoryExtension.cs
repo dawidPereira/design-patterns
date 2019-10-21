@@ -7,14 +7,14 @@ namespace DesignPatterns.Factory.AbstractFactory
 {
     public static class SchoolMemberFactoryExtension
     {
-        public static ISchoolMemberFactory GetSchoolMemberFactory(SchoolMemberType schoolMemberType, IServiceProvider serviceProvider)
+        public static ISchoolMemberFactory GetSchoolMemberFactory(SchoolMemberLanguage schoolMemberLanguage, IServiceProvider serviceProvider)
         {
-            switch (schoolMemberType)
+            switch (schoolMemberLanguage)
             {
-                case SchoolMemberType.PolishStudent:
+                case SchoolMemberLanguage.PolishStudent:
                     return serviceProvider.GetService<PolishSchoolMemberFactory>();
 
-                case SchoolMemberType.EnglishStudent:
+                case SchoolMemberLanguage.EnglishStudent:
                     return serviceProvider.GetService<EnglishSchoolMemberFactory>();
 
                 default:

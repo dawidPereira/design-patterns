@@ -1,5 +1,4 @@
-﻿using System;
-using DesignPatterns.Builder.Entity;
+﻿using DesignPatterns.Builder.Entity;
 using DesignPatterns.Builder.Interface;
 using BurritoBuilderResolver = DesignPatterns.Builder.BuilderDependencyInjectionConfigurator.BurritoBuilderResolver;
 

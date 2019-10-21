@@ -6,7 +6,7 @@ namespace DesignPatterns.Factory.AbstractFactory
 {
     public static class AbstractFactoryDependencyInjectionConfigurator
     {
-        public delegate ISchoolMemberFactory SchoolMemberFactoryResolver(SchoolMemberType key);
+        public delegate ISchoolMemberFactory SchoolMemberFactoryResolver(SchoolMemberLanguage key);
 
         public static IServiceCollection AddAbstractFactory(this IServiceCollection serviceCollection)
         {

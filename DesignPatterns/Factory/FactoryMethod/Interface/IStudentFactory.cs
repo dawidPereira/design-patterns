@@ -4,6 +4,6 @@ namespace DesignPatterns.Factory.FactoryMethod.Interface
 {
     public interface IStudentFactory
     {
-        Student Create(SchoolMemberType studentType);
+        Student Create(SchoolMemberLanguage studentLanguage);
     }
 }
