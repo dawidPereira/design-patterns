@@ -71,9 +71,7 @@ namespace DesignPatterns.CreationalPattern.Implementation
         {
             DemoMessageHelper.ShowStartDemoMessage(AbstractFactoryDemoName);
 
-            var schoolMemberFactory = SchoolMemberFactoryExtension.GetSchoolMemberFactory(
-                Language.Polish, _serviceProviderInstance);
-            var abstractFactoryStudent = schoolMemberFactory.CreateStudent();
+            var abstractFactoryStudent = _polishSchoolMemberFactory.CreateStudent();
 
             abstractFactoryStudent.Greetings();
 
