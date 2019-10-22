@@ -13,17 +13,17 @@ namespace DesignPatterns.CreationalPattern.Builder.Implementation
             _builder = builder;
         }
 
-        public Burrito BuildVegeBurrito(int spiciness, BurritoBuilderTypes builderType)
+        public Burrito BuildVegeBurrito(int spiciness, Builder.BurritoBuilder builder)
         {
-            return _builder(builderType)
+            return _builder(builder)
                 .WithCheese()
                 .WithNachos()
                 .Build(spiciness);
         }
 
-        public Burrito BuildBurritoWithMeat(int spiciness, string meat, BurritoBuilderTypes builderType)
+        public Burrito BuildBurritoWithMeat(int spiciness, string meat, Builder.BurritoBuilder builder)
         {
-            return _builder(builderType)
+            return _builder(builder)
                 .WithCheese()
                 .WithNachos()
                 .WithMeat(meat)

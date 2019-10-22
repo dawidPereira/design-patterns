@@ -1,8 +1,8 @@
 ﻿namespace DesignPatterns.CreationalPattern.Builder
 {
-    public enum BurritoBuilderTypes
+    public enum BurritoBuilder
     {
-        DefaultBuilder,
-        BurritoBuilder
+        Default,
+        Burrito 
     }
 }

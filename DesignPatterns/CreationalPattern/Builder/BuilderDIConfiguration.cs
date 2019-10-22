@@ -6,7 +6,7 @@ namespace DesignPatterns.CreationalPattern.Builder
 {
     public static class BuilderDependencyInjectionConfigurator
     {
-        public delegate IBurritoBuilder BurritoBuilderResolver(BurritoBuilderTypes key);
+        public delegate IBurritoBuilder BurritoBuilderResolver(BurritoBuilder key);
 
         public static IServiceCollection AddBuilder(this IServiceCollection serviceCollection)
         {
@@ -18,16 +18,16 @@ namespace DesignPatterns.CreationalPattern.Builder
         private static IServiceCollection ConfigureBurritoBuilder(this IServiceCollection serviceCollection)
         {
             return serviceCollection
-                .AddTransient<BurritoBuilder>()
+                .AddTransient<Implementation.BurritoBuilder>()
                 .AddTransient<BurritoBuilderResolver>(serviceProvider => key =>
                 {
                     switch (key)
                     {
-                        case BurritoBuilderTypes.BurritoBuilder:
-                            return serviceProvider.GetService<BurritoBuilder>();
+                        case BurritoBuilder.Burrito:
+                            return serviceProvider.GetService<Implementation.BurritoBuilder>();
 
                         default:
-                            return serviceProvider.GetService<BurritoBuilder>();
+                            return serviceProvider.GetService<Implementation.BurritoBuilder>();
                     }
                 });
         }
