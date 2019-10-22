@@ -7,6 +7,7 @@ using DesignPatterns.CreationalPattern.Factory.FactoryMethod.Implementation;
 using DesignPatterns.CreationalPattern.Prototype;
 using DesignPatterns.CreationalPattern.Singleton;
 using Microsoft.Extensions.DependencyInjection;
+using ServiceProvider = DesignPatterns.CreationalPattern.Singleton.ServiceProvider;
 
 namespace DesignPatterns
 {
@@ -14,7 +15,8 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            var serviceProvider = new ServiceCollection().Configure();
+            var serviceProvider = ServiceProvider.GetServiceProvider();
+
             var burritoDirector = serviceProvider.GetService<IBurritoDirector>();
 
             burritoDirector.BuildBurritoWithMeat(3, "Chicken", BurritoBuilderTypes.BurritoBuilder);
