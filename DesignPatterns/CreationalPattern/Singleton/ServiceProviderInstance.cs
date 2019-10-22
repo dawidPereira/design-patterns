@@ -24,9 +24,10 @@ namespace DesignPatterns.CreationalPattern.Singleton
 
             lock (LockObject)
             {
-                return _instance ?? (_instance = new ServiceProviderInstance());
+                _instance = new ServiceProviderInstance();
             }
 
+            return _instance;
         }
 
         public IServiceProvider GetServiceProvider() => _serviceProvider;

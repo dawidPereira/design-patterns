@@ -22,8 +22,10 @@
             }
             lock (LockObject)
             {
-                return _instance ?? (_instance = new SimpleConfiguration());
+                _instance = new SimpleConfiguration();
             }
+
+            return _instance;
         }
     }
 }
