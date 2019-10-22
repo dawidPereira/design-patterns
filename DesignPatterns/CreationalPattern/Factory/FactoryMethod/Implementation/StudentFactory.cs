@@ -5,14 +5,14 @@ namespace DesignPatterns.CreationalPattern.Factory.FactoryMethod.Implementation
 {
     public class StudentFactory : IStudentFactory
     {
-        public Student Create(SchoolMemberLanguage studentLanguage)
+        public Student Create(Language studentLanguage)
         {
             switch (studentLanguage)
             {
-                case SchoolMemberLanguage.PolishStudent:
+                case Language.Polish:
                     return PolishStudent.Create();
 
-                case SchoolMemberLanguage.EnglishStudent:
+                case Language.English:
                     return EnglishStudent.Create();
 
                 default:

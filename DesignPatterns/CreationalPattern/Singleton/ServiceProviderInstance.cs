@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns.CreationalPattern.Singleton
 {
-    public static class ServiceProvider
+    public static class ServiceProviderInstance
     {
         private static IServiceProvider _serviceProvider = null;
 

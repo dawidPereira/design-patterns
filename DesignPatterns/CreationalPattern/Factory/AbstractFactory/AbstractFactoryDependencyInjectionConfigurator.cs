@@ -6,7 +6,7 @@ namespace DesignPatterns.CreationalPattern.Factory.AbstractFactory
 {
     public static class AbstractFactoryDependencyInjectionConfigurator
     {
-        public delegate ISchoolMemberFactory SchoolMemberFactoryResolver(SchoolMemberLanguage key);
+        public delegate ISchoolMemberFactory SchoolMemberFactoryResolver(Language key);
 
         public static IServiceCollection AddAbstractFactory(this IServiceCollection serviceCollection)
         {

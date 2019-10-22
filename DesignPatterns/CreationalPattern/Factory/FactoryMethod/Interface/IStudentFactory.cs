@@ -4,6 +4,6 @@ namespace DesignPatterns.CreationalPattern.Factory.FactoryMethod.Interface
 {
     public interface IStudentFactory
     {
-        Student Create(SchoolMemberLanguage studentLanguage);
+        Student Create(Language studentLanguage);
     }
 }
