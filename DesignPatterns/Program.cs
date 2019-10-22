@@ -5,6 +5,7 @@ using DesignPatterns.Factory;
 using DesignPatterns.Factory.AbstractFactory;
 using DesignPatterns.Factory.FactoryMethod.Implementation;
 using DesignPatterns.Prototype;
+using DesignPatterns.Singleton;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns
@@ -18,6 +19,9 @@ namespace DesignPatterns
 
             burritoDirector.BuildBurritoWithMeat(3, "Chicken", BurritoBuilderTypes.BurritoBuilder);
             burritoDirector.BuildVegeBurrito(1);
+
+            Console.WriteLine();
+
 
             var studentFactory = new StudentFactory();
             var polishStudent = studentFactory.Create(SchoolMemberLanguage.PolishStudent);
@@ -49,6 +53,13 @@ namespace DesignPatterns
 
             Console.WriteLine(shallowCopyMonster.ToString());
             Console.WriteLine(deepCopyMonster.ToString());
+
+            Console.WriteLine();
+
+            var firstSimpleConfiguration = SimpleConfiguration.GetInstance();
+            var lastSimpleConfiguration = SimpleConfiguration.GetInstance();
+
+            Console.WriteLine(firstSimpleConfiguration == lastSimpleConfiguration);
 
 
             Console.ReadKey();
