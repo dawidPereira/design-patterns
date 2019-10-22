@@ -13,7 +13,12 @@
             
         }
 
-        public static SimpleConfiguration GetInstance() =>
-            _instance ?? (_instance = new SimpleConfiguration());
+        public static SimpleConfiguration GetInstance()
+        {
+            lock (_instance)
+            {
+                return _instance ?? (_instance = new SimpleConfiguration());
+            }
+        }
     }
 }

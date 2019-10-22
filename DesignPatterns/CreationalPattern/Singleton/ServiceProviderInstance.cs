@@ -3,13 +3,25 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns.CreationalPattern.Singleton
 {
-    public static class ServiceProviderInstance
+    public class ServiceProviderInstance
     {
-        private static IServiceProvider _serviceProvider = null;
+        private static IServiceProvider _serviceProvider;
 
-        public static IServiceProvider GetServiceProvider()
+        private static ServiceProviderInstance _instance;
+
+        private ServiceProviderInstance()
         {
-            return _serviceProvider ?? (_serviceProvider = new ServiceCollection().Configure());
+            _serviceProvider = new ServiceCollection().Configure();
         }
+
+        public static  ServiceProviderInstance GetInstance()
+        {
+            lock (_serviceProvider)
+            {
+                return _instance ?? (_instance = new ServiceProviderInstance());
+            }
+        }
+
+        public IServiceProvider GetServiceProvider() => _serviceProvider;
     }
 }

@@ -1,15 +1,15 @@
 ﻿using System;
+using DesignPatterns.CreationalPattern.Singleton;
 
 namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity
 {
     public abstract class Demo
     {
-        protected readonly IServiceProvider ServiceProviderInstance;
+        protected readonly IServiceProvider ServiceProvider;
 
         protected Demo()
         {
-            ServiceProviderInstance = CreationalPattern.Singleton.ServiceProviderInstance.GetServiceProvider();
-
+            ServiceProvider = ServiceProviderInstance.GetInstance().GetServiceProvider();
         }
 
         public void ShowDemo(string demoName)

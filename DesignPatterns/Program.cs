@@ -9,7 +9,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            var serviceProvider = ServiceProviderInstance.GetServiceProvider();
+            var serviceProvider = ServiceProviderInstance.GetInstance().GetServiceProvider();
             var creationalPatter = serviceProvider.GetService<ICreationalPattern>();
 
             creationalPatter.ShowDemo();

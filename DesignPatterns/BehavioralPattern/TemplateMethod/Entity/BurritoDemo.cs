@@ -8,7 +8,7 @@ namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity
     {
         protected override void ProcessDemo()
         {
-            var burritoDirector = ServiceProviderInstance.GetService<IBurritoDirector>();
+            var burritoDirector = ServiceProvider.GetService<IBurritoDirector>();
 
             burritoDirector.BuildBurritoWithMeat(3, "Chicken", BurritoBuilder.Burrito);
             burritoDirector.BuildVegeBurrito(1);
