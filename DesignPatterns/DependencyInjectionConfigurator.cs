@@ -1,7 +1,7 @@
 ﻿using System;
-using DesignPatterns.Builder;
-using DesignPatterns.Factory.AbstractFactory;
-using DesignPatterns.Factory.FactoryMethod;
+using DesignPatterns.CreationalPattern.Builder;
+using DesignPatterns.CreationalPattern.Factory.AbstractFactory;
+using DesignPatterns.CreationalPattern.Factory.FactoryMethod;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns

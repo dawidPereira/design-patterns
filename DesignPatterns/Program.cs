@@ -1,11 +1,11 @@
 ﻿using System;
-using DesignPatterns.Builder;
-using DesignPatterns.Builder.Interface;
-using DesignPatterns.Factory;
-using DesignPatterns.Factory.AbstractFactory;
-using DesignPatterns.Factory.FactoryMethod.Implementation;
-using DesignPatterns.Prototype;
-using DesignPatterns.Singleton;
+using DesignPatterns.CreationalPattern.Builder;
+using DesignPatterns.CreationalPattern.Builder.Interface;
+using DesignPatterns.CreationalPattern.Factory;
+using DesignPatterns.CreationalPattern.Factory.AbstractFactory;
+using DesignPatterns.CreationalPattern.Factory.FactoryMethod.Implementation;
+using DesignPatterns.CreationalPattern.Prototype;
+using DesignPatterns.CreationalPattern.Singleton;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns
