@@ -2,7 +2,7 @@
 {
     public class SimpleConfiguration
     {
-        private static SimpleConfiguration _instance;
+        private static volatile SimpleConfiguration _instance;
         private static readonly object LockObject = new object();
 
         public string FirstValue => "FirstValue";
@@ -22,7 +22,10 @@
             }
             lock (LockObject)
             {
-                _instance = new SimpleConfiguration();
+                if (_instance == null)
+                {
+                    _instance = new SimpleConfiguration();
+                }
             }
 
             return _instance;

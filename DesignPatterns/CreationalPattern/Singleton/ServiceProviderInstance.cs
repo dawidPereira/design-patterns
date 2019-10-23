@@ -7,7 +7,7 @@ namespace DesignPatterns.CreationalPattern.Singleton
     {
         private static IServiceProvider _serviceProvider;
 
-        private static ServiceProviderInstance _instance;
+        private static volatile ServiceProviderInstance _instance;
         private static readonly object LockObject = new object();
 
         private ServiceProviderInstance()
@@ -24,7 +24,10 @@ namespace DesignPatterns.CreationalPattern.Singleton
 
             lock (LockObject)
             {
-                _instance = new ServiceProviderInstance();
+                if (_instance == null)
+                {
+                    _instance = new ServiceProviderInstance();
+                }
             }
 
             return _instance;
