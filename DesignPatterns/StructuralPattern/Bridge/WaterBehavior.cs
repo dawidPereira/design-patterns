@@ -6,7 +6,6 @@ namespace DesignPatterns.StructuralPattern.Bridge
     {
         public void PrimarySkill()
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Throw water bubble !");
         }
 

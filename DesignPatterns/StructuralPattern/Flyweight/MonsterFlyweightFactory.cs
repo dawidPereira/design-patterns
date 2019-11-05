@@ -15,28 +15,23 @@ namespace DesignPatterns.StructuralPattern.Flyweight
         {
             var key = GetKey(monsterClass, monsterBehavior);
 
-            if (_flyweights.All(x => x.Item2 != key))
-            {
-                Console.WriteLine("MonsterFlyweightFactory: Can't find a monster, creating new one.");
-                Monster monster;
+            if (_flyweights.Any(x => x.Item2 == key))
+                return _flyweights.FirstOrDefault(t => t.Item2 == key)?.Item1;
 
-                switch (monsterBehavior)
-                {
-                    case MonsterBehavior.Fire:
+            Monster monster;
+
+            switch (monsterBehavior)
+            {
+                case MonsterBehavior.Fire:
                     monster = new Monster(new FireBehavior(), monsterClass);
-                        break;
+                    break;
 
-                    default:
-                        monster = new Monster(new WaterBehavior(), monsterClass);
-                        break;
-                }
+                default:
+                    monster = new Monster(new WaterBehavior(), monsterClass);
+                    break;
+            }
 
-                _flyweights.Add(new Tuple<Monster, int>(monster, key));
-            }
-            else
-            {
-                Console.WriteLine("FlyweightFactory: Reusing existing flyweight.");
-            }
+            _flyweights.Add(new Tuple<Monster, int>(monster, key));
 
             return _flyweights.FirstOrDefault(t => t.Item2 == key)?.Item1;
         }

@@ -1,12 +1,12 @@
 ﻿namespace DesignPatterns.StructuralPattern.Facade
 {
-    public class LoginFacade
+    public class LogInFacade
     {
         private readonly CheckingService _checkingService;
         private readonly LogicService _logicService;
         private readonly CallThePoliceService _callThePoliceService;
 
-        public LoginFacade()
+        public LogInFacade()
         {
             _checkingService = new CheckingService();
             _logicService = new LogicService();

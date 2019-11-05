@@ -6,7 +6,7 @@ namespace DesignPatterns.StructuralPattern.Proxy
     {
         public void LogIn()
         {
-            Console.Write("LogIn service is running.");
+            Console.WriteLine("LogIn service is running.");
         }
     }
 }

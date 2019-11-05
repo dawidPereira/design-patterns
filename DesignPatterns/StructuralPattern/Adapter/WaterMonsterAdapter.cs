@@ -3,12 +3,12 @@ using DesignPatterns.StructuralPattern.Common.Entity;
 
 namespace DesignPatterns.StructuralPattern.Adapter
 {
-    public class MonsterAdapter : IMonster, IHumanoid
+    public class WaterMonsterAdapter : IMonster, IHumanoid
     {
         private readonly Random _random = new Random();
         private readonly WaterMonster _waterMonster;
 
-        public MonsterAdapter(WaterMonster waterMonster)
+        public WaterMonsterAdapter(WaterMonster waterMonster)
         {
             _waterMonster = waterMonster;
         }
