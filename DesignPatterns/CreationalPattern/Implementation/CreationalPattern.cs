@@ -1,4 +1,4 @@
-﻿using DesignPatterns.BehavioralPattern.TemplateMethod.Entity;
+﻿using DesignPatterns.BehavioralPattern.TemplateMethod.Entity.CreationalPattern;
 using DesignPatterns.CreationalPattern.Interface;
 using SchoolMemberFactoryResolver = 
     DesignPatterns.CreationalPattern.Factory.AbstractFactory.AbstractFactoryDependencyInjectionConfigurator.SchoolMemberFactoryResolver;

@@ -2,7 +2,7 @@
 using DesignPatterns.CreationalPattern.Builder.Interface;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity
+namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.CreationalPattern
 {
     public class BurritoDemo : Demo
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using DesignPatterns.CreationalPattern.Prototype;
 
-namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity
+namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.CreationalPattern
 {
     public class PrototypeDemo : Demo
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using DesignPatterns.CreationalPattern.Singleton;
 
-namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity
+namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.CreationalPattern
 {
     public abstract class Demo
     {

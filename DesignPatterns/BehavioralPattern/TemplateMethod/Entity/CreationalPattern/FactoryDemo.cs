@@ -1,7 +1,7 @@
 ﻿using DesignPatterns.CreationalPattern.Factory;
 using DesignPatterns.CreationalPattern.Factory.FactoryMethod.Implementation;
 
-namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity
+namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.CreationalPattern
 {
     public class FactoryDemo : Demo
     {

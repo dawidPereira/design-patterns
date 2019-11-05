@@ -3,7 +3,7 @@ using DesignPatterns.CreationalPattern.Factory.AbstractFactory.Interface;
 using SchoolMemberFactoryResolver =
     DesignPatterns.CreationalPattern.Factory.AbstractFactory.AbstractFactoryDependencyInjectionConfigurator.SchoolMemberFactoryResolver;
 
-namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity
+namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.CreationalPattern
 {
     public class AbstractFactoryDemo : Demo
     {
