@@ -1,6 +1,9 @@
 ﻿using System;
 using DesignPatterns.CreationalPattern.Interface;
 using DesignPatterns.CreationalPattern.Singleton;
+using DesignPatterns.StructuralPattern.Adapter;
+using DesignPatterns.StructuralPattern.Bridge;
+using DesignPatterns.StructuralPattern.Decorator;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns
@@ -9,10 +12,16 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            var serviceProvider = ServiceProviderInstance.GetInstance().GetServiceProvider();
-            var creationalPatter = serviceProvider.GetService<ICreationalPattern>();
+            //var serviceProvider = ServiceProviderInstance.GetInstance().GetServiceProvider();
+            //var creationalPatter = serviceProvider.GetService<ICreationalPattern>();
 
-            creationalPatter.ShowDemo();
+            //creationalPatter.ShowDemo();
+
+            var normalBehavior = new FireBehavior();
+            var enhancedBehavior = new EnhancedFireBehavior(normalBehavior);
+
+            normalBehavior.PrimarySkill();
+            enhancedBehavior.PrimarySkill();
 
             Console.ReadKey();
         }
