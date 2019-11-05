@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.StructuralPattern.Bridge;
+using DesignPatterns.StructuralPattern.Common.Enum;
 
 namespace DesignPatterns.StructuralPattern.Common.Entity
 {
@@ -6,9 +7,12 @@ namespace DesignPatterns.StructuralPattern.Common.Entity
     {
         private readonly IBehavior _behavior;
 
-        public Monster(IBehavior behavior)
+        public readonly MonsterClass MonsterClass;
+
+        public Monster(IBehavior behavior, MonsterClass monsterClass = MonsterClass.Warrior)
         {
             _behavior = behavior;
+            MonsterClass = monsterClass;
         }
 
         public void Attack()
@@ -21,4 +25,5 @@ namespace DesignPatterns.StructuralPattern.Common.Entity
             _behavior.Defense();
         }
     }
+
 }
