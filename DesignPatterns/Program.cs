@@ -4,6 +4,7 @@ using DesignPatterns.CreationalPattern.Singleton;
 using DesignPatterns.StructuralPattern.Adapter;
 using DesignPatterns.StructuralPattern.Bridge;
 using DesignPatterns.StructuralPattern.Decorator;
+using DesignPatterns.StructuralPattern.Facade;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPatterns
@@ -22,6 +23,8 @@ namespace DesignPatterns
 
             normalBehavior.PrimarySkill();
             enhancedBehavior.PrimarySkill();
+
+            new LoginFacade().LogIn();
 
             Console.ReadKey();
         }
