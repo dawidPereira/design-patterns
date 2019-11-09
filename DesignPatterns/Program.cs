@@ -1,5 +1,6 @@
 ﻿using System;
 using DesignPatterns.BehavioralPattern.ChainOfResponsibility;
+using DesignPatterns.BehavioralPattern.Iterator;
 using DesignPatterns.BehavioralPattern.MediatorAndCommand.Command;
 using DesignPatterns.BehavioralPattern.MediatorAndCommand.Mediator;
 using DesignPatterns.CreationalPattern.Interface;
@@ -28,15 +29,32 @@ namespace DesignPatterns
             normalBookingHandler.SetNext(groupBookingHandler);
             groupBookingHandler.SetNext(specialBookingHandler);
 
-            var bookign = new Booking(BookingType.Special);
+            var booking = new Booking(BookingType.Special);
 
-            normalBookingHandler.Handle(bookign);
+            normalBookingHandler.Handle(booking);
 
             //Mediator and command
 
             var command = new AttackCommand(MonsterBehavior.Fire);
             var mediator = new Mediator(command);
             mediator.Handle();
+
+            var runnerCollection = new RunnerCollection
+            {
+                [0] = new Runner("Johan"),
+                [1] = new Runner("Eduardo"),
+                [2] = new Runner("Luciel"),
+                [3] = new Runner("Bard")
+            };
+
+            var runnerIterator = runnerCollection.CreateIterator();
+
+            for (var runner = runnerIterator.First();
+                !runnerIterator.IsDone; 
+                runner = runnerIterator.Next())
+            {
+                runner.Greetings(runnerIterator.Current);
+            }
 
             Console.ReadKey();
         }
