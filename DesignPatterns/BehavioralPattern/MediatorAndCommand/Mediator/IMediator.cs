@@ -1,37 +1,7 @@
-﻿using DesignPatterns.BehavioralPattern.MediatorAndCommand.Command;
-using DesignPatterns.StructuralPattern.Common.Enum;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DesignPatterns.BehavioralPattern.MediatorAndCommand.Mediator
+﻿namespace DesignPatterns.BehavioralPattern.MediatorAndCommand.Mediator
 {
     public interface IMediator
     {
         void Handle();
-    }
-
-    public class Mediator : IMediator
-    {
-        private readonly AttackCommand _command;
-
-        public Mediator(AttackCommand command)
-        {
-            _command = command;
-            _command.SetMediator(this);
-        }
-        public void Handle()
-        {
-            switch (_command.MonsterBehavior)
-            {
-                case MonsterBehavior.Fire:
-                    new FireAttackCommandHandler().Handle();
-                    break;
-
-                case MonsterBehavior.Water:
-                    new WatterAttackCommandHandler().Handle();
-                    break;
-            }
-        }
     }
 }
