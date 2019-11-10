@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using DesignPatterns.BehavioralPattern.ChainOfResponsibility;
 using DesignPatterns.BehavioralPattern.Iterator;
 using DesignPatterns.BehavioralPattern.MediatorAndCommand.Command;
 using DesignPatterns.BehavioralPattern.MediatorAndCommand.Mediator;
 using DesignPatterns.BehavioralPattern.Memento;
+using DesignPatterns.BehavioralPattern.Observer;
 using DesignPatterns.CreationalPattern.Interface;
 using DesignPatterns.CreationalPattern.Singleton;
 using DesignPatterns.StructuralPattern;
@@ -74,6 +76,22 @@ namespace DesignPatterns
             scoreMemory.Undo(score);
             Console.WriteLine($"After Undo() | Points: {score.Points}, KillingSpree: {score.KillingSpree}, | LooseSpree: {score.LooseSpree}.");
 
+            //Observer
+
+            var item = new Item(299, "Keyboard");
+            var subscribers = new List<DiscountSubscriber>
+            {
+                new DiscountSubscriber("Emanule", item.Price, 0.1),
+                new DiscountSubscriber("Jason", item.Price, 0.05),
+                new DiscountSubscriber("Somebady", item.Price, 0.25)
+            };
+
+            foreach (var discountSubscriber in subscribers)
+            {
+                item.Attach(discountSubscriber);
+            }
+
+            item.UpdatePrice(249);
 
             Console.ReadKey();
         }
