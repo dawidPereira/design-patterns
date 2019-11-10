@@ -8,16 +8,16 @@ namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.BehavioralPatte
         protected override void ProcessDemo()
         {
             var item = new Item(299, "Keyboard");
-            var subscribers = new List<DiscountSubscriber>
+            var subscribers = new List<DiscountObserver>
             {
-                new DiscountSubscriber("Emanule", item.Price, 0.1),
-                new DiscountSubscriber("Jason", item.Price, 0.05),
-                new DiscountSubscriber("Somebady", item.Price, 0.25)
+                new DiscountObserver("Emanule", item.Price, 0.1),
+                new DiscountObserver("Jason", item.Price, 0.05),
+                new DiscountObserver("Somebady", item.Price, 0.25)
             };
 
             foreach (var discountSubscriber in subscribers)
             {
-                item.Attach(discountSubscriber);
+                item.Subscribe(discountSubscriber);
             }
 
             item.UpdatePrice(249);

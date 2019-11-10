@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.BehavioralPattern.Observer
 {
-    public class Item : BaseItem
+    public class Item : Observable<Item>
     {
         public double Price { get; private set; }
 
@@ -17,7 +17,7 @@ namespace DesignPatterns.BehavioralPattern.Observer
         public void UpdatePrice(double newPrice)
         {
             Price = newPrice;
-            Notify();
+            Notify(this);
         }
     }
 }
