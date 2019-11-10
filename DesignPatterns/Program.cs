@@ -7,6 +7,8 @@ using DesignPatterns.BehavioralPattern.MediatorAndCommand.Mediator;
 using DesignPatterns.BehavioralPattern.Memento;
 using DesignPatterns.BehavioralPattern.Observer;
 using DesignPatterns.BehavioralPattern.State;
+using DesignPatterns.BehavioralPattern.Strategy;
+using DesignPatterns.BehavioralPattern.Visitor;
 using DesignPatterns.CreationalPattern.Interface;
 using DesignPatterns.CreationalPattern.Singleton;
 using DesignPatterns.StructuralPattern;
@@ -111,6 +113,37 @@ namespace DesignPatterns
             invoice.AddItem(new InvoicePosition("Monitor", 799));
             invoice.Process();
             invoice.Process();
+
+            //Strategy
+
+            var reader = new Reader(new FifoReadingStrategy());
+
+            var readingList = new List<string>
+            {
+                "First",
+                "Second",
+                "Third"
+            };
+
+            reader.Read(new List<string>());
+            reader.Read(readingList);
+            reader.SetStrategy(new LifoReadingStrategy());
+            reader.Read(readingList);
+
+            //Visitor
+
+            var productMemory = new ProductMemory();
+            productMemory.Attach(new Product("PC", 2999));
+            productMemory.Attach(new Product("Car", 29999));
+            productMemory.Attach(new Product("Headphone", 99));
+
+            productMemory.Accept(new DiscountPriceVisitor());
+            productMemory.Accept(new RegularPriceVisitor());
+            productMemory.Accept(new DiscountPriceVisitor());
+            productMemory.Accept(new BasePriceVisitor());
+            productMemory.Accept(new RegularPriceVisitor());
+
+
 
             Console.ReadKey();
         }

@@ -10,7 +10,7 @@ namespace DesignPatterns.BehavioralPattern.State
 
         public void AddItem(InvoicePosition invoicePosition)
         {
-            Console.WriteLine($"Added: {invoicePosition.Name} | Price: {invoicePosition.Price}.");
+            Console.WriteLine($"Added: {invoicePosition.Name} | ActualPrice: {invoicePosition.Price}.");
             Invoice.ItemList.Add(invoicePosition);
         }
 
