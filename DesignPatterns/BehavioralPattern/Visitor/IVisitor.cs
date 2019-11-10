@@ -1,7 +1,7 @@
 ﻿namespace DesignPatterns.BehavioralPattern.Visitor
 {
-    public interface IVisitor
+    public interface IVisitor<in T>
     {
-        void Visit(object visited);
+        void Visit(T visited);
     }
 }

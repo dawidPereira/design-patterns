@@ -13,7 +13,7 @@
             BasePrice = actualPrice;
         }
 
-        public void Accept(IVisitor visitor)
+        public void Accept(IVisitor<Product> visitor)
         {
             visitor.Visit(this);
         }

@@ -17,7 +17,7 @@ namespace DesignPatterns.BehavioralPattern.Visitor
             _products.Remove(product);
         }
 
-        public void Accept(IVisitor visitor)
+        public void Accept(IVisitor<Product> visitor)
         {
             foreach (var product in _products)
             {
