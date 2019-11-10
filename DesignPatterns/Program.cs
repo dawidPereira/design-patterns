@@ -3,6 +3,7 @@ using DesignPatterns.BehavioralPattern.ChainOfResponsibility;
 using DesignPatterns.BehavioralPattern.Iterator;
 using DesignPatterns.BehavioralPattern.MediatorAndCommand.Command;
 using DesignPatterns.BehavioralPattern.MediatorAndCommand.Mediator;
+using DesignPatterns.BehavioralPattern.Memento;
 using DesignPatterns.CreationalPattern.Interface;
 using DesignPatterns.CreationalPattern.Singleton;
 using DesignPatterns.StructuralPattern;
@@ -39,6 +40,8 @@ namespace DesignPatterns
             var mediator = new Mediator(command);
             mediator.Handle();
 
+
+            // Iterator 
             var runnerCollection = new RunnerCollection
             {
                 [0] = new Runner("Johan"),
@@ -55,6 +58,22 @@ namespace DesignPatterns
             {
                 runner.Greetings(runnerIterator.Current);
             }
+
+            // Memento
+
+            var score = new Score();
+            var scoreMemory = new ScoreMemory();
+
+            for (var i = 0; i < 3; i++)
+            {
+                scoreMemory.Backup(score);
+                score.AddPoints();
+            }
+
+            Console.WriteLine($"Before Undo() | Points: {score.Points}, KillingSpree: {score.KillingSpree}, | LooseSpree: {score.LooseSpree}.");
+            scoreMemory.Undo(score);
+            Console.WriteLine($"After Undo() | Points: {score.Points}, KillingSpree: {score.KillingSpree}, | LooseSpree: {score.LooseSpree}.");
+
 
             Console.ReadKey();
         }

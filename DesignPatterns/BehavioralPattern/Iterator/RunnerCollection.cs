@@ -4,7 +4,7 @@ namespace DesignPatterns.BehavioralPattern.Iterator
 {
     public class RunnerCollection : IRunnerCollection
     {
-        private ArrayList _items = new ArrayList();
+        private readonly ArrayList _items = new ArrayList();
 
         public RunnerIterator CreateIterator()
         {
