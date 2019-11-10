@@ -6,11 +6,13 @@ using DesignPatterns.BehavioralPattern.MediatorAndCommand.Command;
 using DesignPatterns.BehavioralPattern.MediatorAndCommand.Mediator;
 using DesignPatterns.BehavioralPattern.Memento;
 using DesignPatterns.BehavioralPattern.Observer;
+using DesignPatterns.BehavioralPattern.State;
 using DesignPatterns.CreationalPattern.Interface;
 using DesignPatterns.CreationalPattern.Singleton;
 using DesignPatterns.StructuralPattern;
 using DesignPatterns.StructuralPattern.Common.Enum;
 using Microsoft.Extensions.DependencyInjection;
+using Item = DesignPatterns.BehavioralPattern.Observer.Item;
 
 namespace DesignPatterns
 {
@@ -92,6 +94,23 @@ namespace DesignPatterns
             }
 
             item.UpdatePrice(249);
+
+            //State
+
+            var invoice = new Invoice(new List<InvoicePosition>
+            {
+                new InvoicePosition("PC", 2999),
+                new InvoicePosition("Keyboard", 299)
+            });
+
+            invoice.Process();
+            invoice.AddItem(new InvoicePosition("Mouse", 59));
+
+            invoice.Process();
+            invoice.Process();
+            invoice.AddItem(new InvoicePosition("Monitor", 799));
+            invoice.Process();
+            invoice.Process();
 
             Console.ReadKey();
         }
