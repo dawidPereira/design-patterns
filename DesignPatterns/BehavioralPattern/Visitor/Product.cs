@@ -17,6 +17,5 @@
         {
             visitor.Visit(this);
         }
-
     }
 }

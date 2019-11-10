@@ -1,9 +1,10 @@
 ﻿using System;
+using DesignPatterns.BehavioralPattern;
+using DesignPatterns.CreationalPattern;
 using DesignPatterns.CreationalPattern.Builder;
 using DesignPatterns.CreationalPattern.Factory.AbstractFactory;
 using DesignPatterns.CreationalPattern.Factory.FactoryMethod;
-using DesignPatterns.CreationalPattern.Interface;
-using CreationalPatternImplementation = DesignPatterns.CreationalPattern.Implementation.CreationalPattern;
+using CreationalPatternImplementation = DesignPatterns.CreationalPattern.CreationalPattern;
 using Microsoft.Extensions.DependencyInjection;
 using DesignPatterns.StructuralPattern;
 
@@ -18,7 +19,8 @@ namespace DesignPatterns
                 .AddFactoryMethod()
                 .AddAbstractFactory()
                 .AddStructuralPattern()
-                .AddTransient<ICreationalPattern, CreationalPatternImplementation>()
+                .AddBehavioralPattern()
+                .AddCreationalPattern()
                 .BuildServiceProvider();
 
         }

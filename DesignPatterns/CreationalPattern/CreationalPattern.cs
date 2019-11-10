@@ -1,9 +1,8 @@
 ﻿using DesignPatterns.BehavioralPattern.TemplateMethod.Entity.CreationalPattern;
-using DesignPatterns.CreationalPattern.Interface;
 using SchoolMemberFactoryResolver = 
     DesignPatterns.CreationalPattern.Factory.AbstractFactory.AbstractFactoryDependencyInjectionConfigurator.SchoolMemberFactoryResolver;
 
-namespace DesignPatterns.CreationalPattern.Implementation
+namespace DesignPatterns.CreationalPattern
 {
     public class CreationalPattern : ICreationalPattern
     {

@@ -25,5 +25,21 @@ namespace DesignPatterns
         public static string Flyweight = "Flyweight";
 
         public static string Proxy = "Proxy";
+
+        public static string ChainOfResponsibility = "ChainOfResponsibility";
+
+        public static string Iterator = "Iterator";
+
+        public static string MediatorAndCommand = "MediatorAndCommand";
+
+        public static string Memento = "Memento";
+
+        public static string Observer = "Observer";
+
+        public static string State = "State";
+
+        public static string Strategy = "Strategy";
+
+        public static string Visitor = "Visitor";
     }
 }

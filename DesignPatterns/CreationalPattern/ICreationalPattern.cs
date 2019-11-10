@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.CreationalPattern.Interface
+﻿namespace DesignPatterns.CreationalPattern
 {
     public interface ICreationalPattern
     {
