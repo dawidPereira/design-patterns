@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.BehavioralPattern.ChainOfResponsibility;
+using DesignPatterns.BehavioralPattern.ChainOfResponsibility.Handlers;
 
 namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.BehavioralPattern
 {
@@ -10,12 +11,12 @@ namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.BehavioralPatte
             var groupBookingHandler = new GroupBookingHandler();
             var specialBookingHandler = new SpecialBookingHandler();
 
-            normalBookingHandler.SetNext(groupBookingHandler);
-            groupBookingHandler.SetNext(specialBookingHandler);
+            specialBookingHandler.SetNext(groupBookingHandler);
+            groupBookingHandler.SetNext(normalBookingHandler);
 
             var booking = new Booking(BookingType.Special);
 
-            normalBookingHandler.Handle(booking);
+            specialBookingHandler.Handle(booking);
         }
     }
 }

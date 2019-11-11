@@ -2,7 +2,7 @@
 {
     public class Booking
     {
-        public BookingType BookingType { get; }
+        public BookingType BookingType { get; set; }
 
         public Booking(BookingType bookingType)
         {

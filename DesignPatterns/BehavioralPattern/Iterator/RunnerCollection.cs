@@ -11,7 +11,7 @@ namespace DesignPatterns.BehavioralPattern.Iterator
             return new RunnerIterator(this);
         }
 
-        public int Count =>_items.Count; 
+        public int Count => _items.Count; 
 
         public object this[int index]
         {

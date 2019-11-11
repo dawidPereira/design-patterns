@@ -16,8 +16,8 @@ namespace DesignPatterns
             var structuralPatter = serviceProvider.GetService<IStructuralPattern>();
             var behavioralPattern = serviceProvider.GetService<IBehavioralPattern>();
 
-            creationalPatter.ShowDemo();
-            structuralPatter.ShowDemo();
+            //creationalPatter.ShowDemo();
+            //structuralPatter.ShowDemo();
             behavioralPattern.ShowDemo();
 
             Console.ReadKey();
