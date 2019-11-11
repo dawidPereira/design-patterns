@@ -1,38 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using DesignPatterns.BehavioralPattern.Strategy.Strategies;
 
 namespace DesignPatterns.BehavioralPattern.Strategy
 {
-    public interface IReadingStrategy
-    {
-        void Read(ICollection<string> readingList);
-    }
-
-    public class FifoReadingStrategy : IReadingStrategy
-    {
-        public void Read(ICollection<string> readingList)
-        {
-            foreach (var item in readingList)
-            {
-                Console.WriteLine(item);
-            }
-        }
-    }
-
-    public class LifoReadingStrategy : IReadingStrategy
-    {
-        public void Read(ICollection<string> readingList)
-        {
-            var reversedReadingList = readingList.Reverse();
-
-            foreach (var item in reversedReadingList)
-            {
-                Console.WriteLine(item);
-            }
-        }
-    }
-
     public class Reader
     {
         private IReadingStrategy _readingStrategy;

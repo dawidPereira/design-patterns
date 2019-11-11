@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DesignPatterns.BehavioralPattern.Strategy;
+using DesignPatterns.BehavioralPattern.Strategy.Strategies;
 
 namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.BehavioralPattern
 {

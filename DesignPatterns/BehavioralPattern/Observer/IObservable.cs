@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.BehavioralPattern.Observer
 {
-    public interface IObservable<T>
+    public interface IObservable<out T>
     {
         void Subscribe(IObserver<T> subscriber);
 
