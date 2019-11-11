@@ -6,7 +6,7 @@ namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.BehavioralPatte
     {
         protected override void ProcessDemo()
         {
-            var runnerCollection = new RunnerCollection
+            var runnerCollection = new CustomCollection<Runner>
             {
                 [0] = new Runner("Johan"),
                 [1] = new Runner("Eduardo"),
