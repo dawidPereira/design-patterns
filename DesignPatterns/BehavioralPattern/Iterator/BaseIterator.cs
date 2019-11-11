@@ -3,7 +3,7 @@
     public class BaseIterator<T> : IIterator<T>
     {
         private readonly ICustomCollection<T> _collection;
-        public int Current { get; private set; }
+        public int Index { get; private set; }
 
         public BaseIterator(ICustomCollection<T> collection)
         {
@@ -12,18 +12,18 @@
 
         public T First()
         {
-            Current = 0;
-            return _collection[Current];
+            Index = 0;
+            return _collection[Index];
         }
 
         public T Next()
         {
-            Current++;
-            return !IsDone ? _collection[Current] : default;
+            Index++;
+            return !IsDone ? _collection[Index] : default;
         }
 
-        public T CurrentItem => _collection[Current];
+        public T CurrentItem => _collection[Index];
 
-        public bool IsDone => Current >= _collection.Count(); 
+        public bool IsDone => Index >= _collection.Count(); 
     }
 }

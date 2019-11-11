@@ -6,7 +6,7 @@ namespace DesignPatterns.BehavioralPattern
     {
         private readonly ChainOfResponsibilityDemo _chainOfResponsibilityDemo;
         private readonly IteratorDemo _iteratorDemo;
-        private readonly MediatorAndCommandDemo _mediatorAndCommandDemo;
+        private readonly CommandDemo _commandDemo;
         private readonly MementoDemo _mementoDemo;
         private readonly ObserverDemo _observerDemo;
         private readonly StateDemo _stateDemo;
@@ -17,7 +17,7 @@ namespace DesignPatterns.BehavioralPattern
         {
             _chainOfResponsibilityDemo = new ChainOfResponsibilityDemo();
             _iteratorDemo = new IteratorDemo();
-            _mediatorAndCommandDemo = new MediatorAndCommandDemo();
+            _commandDemo = new CommandDemo();
             _mementoDemo = new MementoDemo();
             _observerDemo = new ObserverDemo();
             _stateDemo = new StateDemo();
@@ -29,7 +29,7 @@ namespace DesignPatterns.BehavioralPattern
         {
             _chainOfResponsibilityDemo.ShowDemo(DemoName.ChainOfResponsibility);
             _iteratorDemo.ShowDemo(DemoName.Iterator);
-            _mediatorAndCommandDemo.ShowDemo(DemoName.MediatorAndCommand);
+            _commandDemo.ShowDemo(DemoName.MediatorAndCommand);
             _mementoDemo.ShowDemo(DemoName.Memento);
             _observerDemo.ShowDemo(DemoName.Observer);
             _stateDemo.ShowDemo(DemoName.State);

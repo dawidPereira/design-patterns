@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace DesignPatterns.BehavioralPattern.MediatorAndCommand.Command
+namespace DesignPatterns.BehavioralPattern.Command.Handler
 {
     public class FireAttackCommandHandler : ICommandHandler
     {
-        public void Handle()
+        public void Handle<T>(T command)
         {
             Console.WriteLine("Fireball from FireAttackCommandHandler.");
         }

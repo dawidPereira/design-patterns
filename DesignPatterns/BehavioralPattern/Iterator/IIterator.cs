@@ -8,6 +8,8 @@
 
         T CurrentItem { get; }
 
+        int Index { get; }
+
         bool IsDone { get; }
     }
 }

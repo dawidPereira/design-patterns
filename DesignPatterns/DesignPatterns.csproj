@@ -12,4 +12,9 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BehavioralPattern\MediatorAndCommand\Command\" />
+    <Folder Include="BehavioralPattern\MediatorAndCommand\Mediator\" />
+  </ItemGroup>
+
 </Project>

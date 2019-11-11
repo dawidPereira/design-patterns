@@ -20,7 +20,7 @@ namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.BehavioralPatte
                 !runnerIterator.IsDone;
                 runner = runnerIterator.Next())
             {
-                runner.Greetings(runnerIterator.Current);
+                runner.Greetings(runnerIterator.Index);
             }
         }
     }
