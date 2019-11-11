@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.BehavioralPattern.State
+﻿namespace DesignPatterns.BehavioralPattern.State.States
 {
     public interface IInvoiceState
     {

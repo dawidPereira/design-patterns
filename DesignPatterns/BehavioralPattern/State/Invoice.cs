@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DesignPatterns.BehavioralPattern.State.States;
 
 namespace DesignPatterns.BehavioralPattern.State
 {
@@ -10,7 +11,7 @@ namespace DesignPatterns.BehavioralPattern.State
         public Invoice(ICollection<InvoicePosition> itemList)
         {
             ItemList = itemList;
-            State = new NewInvoiceState(this);
+            State = new NewState(this);
         }
 
         public void UpdateState(IInvoiceState state)

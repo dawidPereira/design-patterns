@@ -1,19 +1,19 @@
 ﻿using System;
 
-namespace DesignPatterns.BehavioralPattern.State
+namespace DesignPatterns.BehavioralPattern.State.States
 {
-    public class PostedState : InvoiceState, IInvoiceState
+    public class PostedState : BaseState
     {
         public PostedState(Invoice invoice) : base(invoice)
         {
         }
 
-        public void AddItem(InvoicePosition invoicePosition)
+        public override void AddItem(InvoicePosition invoicePosition)
         {
             Console.WriteLine("Can't add items to posted invoices.");
         }
 
-        public void Process()
+        public override void Process()
         {
             Console.WriteLine("Can't process posted invoices.");
         }

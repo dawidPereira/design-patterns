@@ -1,19 +1,19 @@
 ﻿using System;
 
-namespace DesignPatterns.BehavioralPattern.State
+namespace DesignPatterns.BehavioralPattern.State.States
 {
-    public class AcceptedState : InvoiceState, IInvoiceState
+    public class AcceptedState : BaseState
     {
         public AcceptedState(Invoice invoice) : base(invoice)
         {
         }
 
-        public void AddItem(InvoicePosition invoicePosition)
+        public override void AddItem(InvoicePosition invoicePosition)
         {
             Console.WriteLine("Can't add items to accepted invoices.");
         }
 
-        public void Process()
+        public override void Process()
         {
             Invoice.UpdateState(new PostedState(Invoice));
             Console.WriteLine("State updated to PostedState.");
