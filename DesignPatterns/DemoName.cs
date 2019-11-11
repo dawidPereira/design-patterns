@@ -30,7 +30,7 @@ namespace DesignPatterns
 
         public static string Iterator = "Iterator";
 
-        public static string MediatorAndCommand = "MediatorAndCommand";
+        public static string Command = "Command";
 
         public static string Memento = "Memento";
 
@@ -41,5 +41,7 @@ namespace DesignPatterns
         public static string Strategy = "Strategy";
 
         public static string Visitor = "Visitor";
+
+        public static string Mediator = "Mediator";
     }
 }
