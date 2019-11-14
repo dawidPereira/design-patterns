@@ -2,18 +2,12 @@
 {
     public abstract class Colleague
     {
-        protected Mediator Mediator;
+        private readonly Mediator _mediator;
 
-        protected Colleague(Mediator mediator)
-        {
-            Mediator = mediator;
-        }
+        protected Colleague(Mediator mediator) => _mediator = mediator;
 
         public abstract void Notify(string message);
 
-        public virtual void Send(string message)
-        {
-            Mediator.SendMessage(message, this);
-        }
+        public virtual void Send(string message) => _mediator.SendMessage(message, this);
     }
 }

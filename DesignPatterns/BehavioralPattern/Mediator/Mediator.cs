@@ -7,10 +7,7 @@ namespace DesignPatterns.BehavioralPattern.Mediator
     {
         private readonly HashSet<Colleague> _colleagues;
 
-        public Mediator()
-        {
-            _colleagues = new HashSet<Colleague>();
-        }
+        public Mediator() => _colleagues = new HashSet<Colleague>();
 
         public void SendMessage(string message, Colleague colleague)
         {
@@ -23,7 +20,7 @@ namespace DesignPatterns.BehavioralPattern.Mediator
             }
 
             foreach (var specificColleague in _colleagues
-                .Where(specificColleague => 
+                .Where(specificColleague =>
                     !specificColleague.Equals(colleague)))
             {
                 specificColleague.Notify(message);
@@ -35,9 +32,6 @@ namespace DesignPatterns.BehavioralPattern.Mediator
             _colleagues.Add(colleague);
         }
 
-        public void Detach(Colleague colleague)
-        {
-            _colleagues.Remove(colleague);
-        }
+        public void Detach(Colleague colleague) => _colleagues.Remove(colleague);
     }
 }

@@ -5,7 +5,7 @@ namespace DesignPatterns.BehavioralPattern.Strategy.Strategies
 {
     public class FifoReadingStrategy : IReadingStrategy
     {
-        public void Read(ICollection<string> readingList)
+        public void Read(IEnumerable<string> readingList)
         {
             foreach (var item in readingList)
             {

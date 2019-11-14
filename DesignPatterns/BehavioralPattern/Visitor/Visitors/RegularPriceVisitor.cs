@@ -1,4 +1,4 @@
-﻿using System;
+﻿using static System.Console;
 
 namespace DesignPatterns.BehavioralPattern.Visitor.Visitors
 {
@@ -7,7 +7,7 @@ namespace DesignPatterns.BehavioralPattern.Visitor.Visitors
         public void Visit(Product product)
         {
             product.ActualPrice = product.BasePrice;
-            Console.WriteLine($"{product.Name} price: {product.ActualPrice}");
+            WriteLine($"{product.Name} price: {product.ActualPrice}");
         }
     }
 }

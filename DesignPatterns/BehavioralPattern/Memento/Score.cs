@@ -4,14 +4,11 @@
     {
         public int Points { get; protected set; }
 
-        public int KillingSpree { get; set; }
+        public int KillingSpree { get; protected set; }
 
-        public int LooseSpree { get; set; }
+        public int LooseSpree { get; protected set; }
 
-        public ScoreMemento SaveMemento()
-        {
-            return new ScoreMemento(this);
-        }
+        public ScoreMemento SaveMemento() => new ScoreMemento(this);
 
         public void RestoreMemento(ScoreMemento memento)
         {

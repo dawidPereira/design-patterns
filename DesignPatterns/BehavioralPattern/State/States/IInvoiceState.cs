@@ -3,6 +3,7 @@
     public interface IInvoiceState
     {
         void AddItem(InvoicePosition invoicePosition);
+        
         void Process();
     }
 }

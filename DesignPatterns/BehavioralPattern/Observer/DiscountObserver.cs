@@ -1,4 +1,4 @@
-﻿using System;
+﻿using static System.Console;
 
 namespace DesignPatterns.BehavioralPattern.Observer
 {
@@ -16,7 +16,7 @@ namespace DesignPatterns.BehavioralPattern.Observer
 
         public void Notify(Item item)
         {
-            Console.WriteLine(
+            WriteLine(
                 item.Price <= _buyPrice
                     ? $"{_name} buy {item.Name}."
                     : $"{_name} don't 'buy {item?.Name}.");

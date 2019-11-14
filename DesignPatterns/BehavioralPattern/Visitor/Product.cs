@@ -2,7 +2,7 @@
 {
     public class Product
     {
-        public string Name { get; set; }
+        public string Name { get; private set; }
         public double ActualPrice { get; set; }
         public double BasePrice { get; set; }
 
@@ -13,9 +13,6 @@
             BasePrice = actualPrice;
         }
 
-        public void Accept(IVisitor<Product> visitor)
-        {
-            visitor.Visit(this);
-        }
+        public void Accept(IVisitor<Product> visitor) => visitor.Visit(this);
     }
 }

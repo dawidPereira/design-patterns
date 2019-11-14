@@ -6,15 +6,9 @@ namespace DesignPatterns.BehavioralPattern.Observer
     {
         private readonly HashSet<IObserver<T>> _subscribers = new HashSet<IObserver<T>>();
 
-        public void Subscribe(IObserver<T> subscriber)
-        {
-            _subscribers.Add(subscriber);
-        }
+        public void Subscribe(IObserver<T> subscriber) => _subscribers.Add(subscriber);
 
-        public void Unsubscribe(IObserver<T> subscriber)
-        {
-            _subscribers.Remove(subscriber);
-        }
+        public void Unsubscribe(IObserver<T> subscriber) => _subscribers.Remove(subscriber);
 
         protected void Notify(T item)
         {

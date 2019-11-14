@@ -1,4 +1,4 @@
-﻿using System;
+﻿using static System.Console;
 
 namespace DesignPatterns.BehavioralPattern.Mediator
 {
@@ -10,13 +10,10 @@ namespace DesignPatterns.BehavioralPattern.Mediator
 
         public override void Send(string message)
         {
-            Console.WriteLine("Control room sends message: " + message);
+            WriteLine("Control room sends message: " + message);
             base.Send(message);
         }
 
-        public override void Notify(string message)
-        {
-            Console.WriteLine("Control room gets message: " + message);
-        }
+        public override void Notify(string message) => WriteLine("Control room gets message: " + message);
     }
 }

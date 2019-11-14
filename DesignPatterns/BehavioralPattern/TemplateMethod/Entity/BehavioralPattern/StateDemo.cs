@@ -15,7 +15,6 @@ namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.BehavioralPatte
 
             invoice.Process();
             invoice.AddItem(new InvoicePosition("Mouse", 59));
-
             invoice.Process();
             invoice.Process();
             invoice.AddItem(new InvoicePosition("Monitor", 799));

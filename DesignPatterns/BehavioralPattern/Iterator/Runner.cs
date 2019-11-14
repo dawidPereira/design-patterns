@@ -8,6 +8,7 @@ namespace DesignPatterns.BehavioralPattern.Iterator
 
         public Runner(string name) => Name = name;
 
-        public void Greetings(int place) => Console.WriteLine($"I'm {Name} and I took {place + 1} place in this race!");
+        public void Greetings(int place) => Console.WriteLine(
+            $"I'm {Name} and I took {place + 1} place in this race!");
     }
 }

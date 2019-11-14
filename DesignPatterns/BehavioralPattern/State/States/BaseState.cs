@@ -1,15 +1,10 @@
-﻿using System;
-
-namespace DesignPatterns.BehavioralPattern.State.States
+﻿namespace DesignPatterns.BehavioralPattern.State.States
 {
     public abstract class BaseState : IInvoiceState
     {
         protected readonly Invoice Invoice;
 
-        protected BaseState(Invoice invoice)
-        {
-            Invoice = invoice;
-        }
+        protected BaseState(Invoice invoice) => Invoice = invoice;
 
         public abstract void AddItem(InvoicePosition invoicePosition);
 

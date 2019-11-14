@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using static System.Console;
 
 namespace DesignPatterns.BehavioralPattern.Memento
 {
@@ -10,7 +10,7 @@ namespace DesignPatterns.BehavioralPattern.Memento
 
         public void Backup(Score score)
         {
-            Console.WriteLine("ScoreMemory: Saving state.");
+            WriteLine("ScoreMemory: Saving state.");
             _mementos.Add(score.SaveMemento());
         }
 
@@ -19,9 +19,10 @@ namespace DesignPatterns.BehavioralPattern.Memento
             if (_mementos.Count == 0) return;
 
             var memento = _mementos.Last();
+            
             _mementos.Remove(memento);
 
-            Console.WriteLine("ScoreMemory: Restoring state.");
+            WriteLine("ScoreMemory: Restoring state.");
 
             score.RestoreMemento(memento);
         }

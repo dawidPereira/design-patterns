@@ -1,5 +1,5 @@
-﻿using System;
-using DesignPatterns.BehavioralPattern.Memento;
+﻿using DesignPatterns.BehavioralPattern.Memento;
+using static System.Console;
 
 namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.BehavioralPattern
 {
@@ -16,9 +16,9 @@ namespace DesignPatterns.BehavioralPattern.TemplateMethod.Entity.BehavioralPatte
                 score.AddPoints();
             }
 
-            Console.WriteLine($"Before Undo() | Points: {score.Points}, KillingSpree: {score.KillingSpree}, | LooseSpree: {score.LooseSpree}.");
+            WriteLine($"Before Undo() | Points: {score.Points}, KillingSpree: {score.KillingSpree}, | LooseSpree: {score.LooseSpree}.");
             scoreMemory.Undo(score);
-            Console.WriteLine($"After Undo() | Points: {score.Points}, KillingSpree: {score.KillingSpree}, | LooseSpree: {score.LooseSpree}.");
+            WriteLine($"After Undo() | Points: {score.Points}, KillingSpree: {score.KillingSpree}, | LooseSpree: {score.LooseSpree}.");
 
         }
     }

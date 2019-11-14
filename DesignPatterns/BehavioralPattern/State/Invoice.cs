@@ -5,28 +5,19 @@ namespace DesignPatterns.BehavioralPattern.State
 {
     public class Invoice : IInvoiceState
     {
-        protected IInvoiceState State;
-        public ICollection<InvoicePosition> ItemList { get; set; }
+        private IInvoiceState _state;
+        public ICollection<InvoicePosition> ItemList { get; private set; }
 
         public Invoice(ICollection<InvoicePosition> itemList)
         {
             ItemList = itemList;
-            State = new NewState(this);
+            _state = new NewState(this);
         }
 
-        public void UpdateState(IInvoiceState state)
-        {
-            State = state;
-        }
+        public void UpdateState(IInvoiceState state) => _state = state;
 
-        public void AddItem(InvoicePosition invoicePosition)
-        {
-            State.AddItem(invoicePosition);
-        }
+        public void AddItem(InvoicePosition invoicePosition) => _state.AddItem(invoicePosition);
 
-        public void Process()
-        {
-            State.Process();
-        }
+        public void Process() => _state.Process();
     }
 }

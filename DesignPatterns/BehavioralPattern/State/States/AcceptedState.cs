@@ -1,4 +1,4 @@
-﻿using System;
+﻿using static System.Console;
 
 namespace DesignPatterns.BehavioralPattern.State.States
 {
@@ -8,16 +8,12 @@ namespace DesignPatterns.BehavioralPattern.State.States
         {
         }
 
-        public override void AddItem(InvoicePosition invoicePosition)
-        {
-            Console.WriteLine("Can't add items to accepted invoices.");
-        }
+        public override void AddItem(InvoicePosition invoicePosition) => WriteLine("Can't add items to accepted invoices.");
 
         public override void Process()
         {
             Invoice.UpdateState(new PostedState(Invoice));
-            Console.WriteLine("State updated to PostedState.");
-
+            WriteLine("State updated to PostedState.");
         }
     }
 }

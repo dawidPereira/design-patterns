@@ -5,8 +5,6 @@ namespace DesignPatterns.StructuralPattern.Decorator
 {
     public class EnhancedFireBehavior : BehaviorDecorator
     {
-        private readonly IBehavior _behavior;
-
         public EnhancedFireBehavior(IBehavior behavior) : base (behavior)
         {
         }

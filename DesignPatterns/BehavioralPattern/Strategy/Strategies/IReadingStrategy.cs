@@ -4,6 +4,6 @@ namespace DesignPatterns.BehavioralPattern.Strategy.Strategies
 {
     public interface IReadingStrategy
     {
-        void Read(ICollection<string> readingList);
+        void Read(IEnumerable<string> readingList);
     }
 }
